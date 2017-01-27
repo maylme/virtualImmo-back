@@ -179,8 +179,39 @@ io.on('connection', function (client) {
                     client.emit("err", "sofa id doesnt exist");
                 }
                 break;
+            case "tv":
+                if (tv[data.id]){
+                    var selected_tv = {};
+                    selected_tv.id = tv[data.id].id;
+                    selected_tv.index = data.index;
+
+                    selected_tv.name = tv[data.id].name;
+                    var model3D = fs.readFileSync(tv[data.id].model3D);
+                    selected_tv.model3D = JSON.parse(new Buffer(model3D).toString());
+
+                    selected_tv.selected_texture = data.textureId;
+                    selected_tv.position = data.position;
+
+                    selected_tv.textures_availables = {};
+                    selected_tv.type = "tv";
+                    var keys = Object.keys(tv[data.id].textures_availables);
+
+                    for (var i = 0; i < keys.length; i++){
+                        var texture = fs.readFileSync(tv[data.id].textures_availables[keys[i]].texture);
+                        selected_tv.textures_availables[keys[i]] = {
+                            name: tv[data.id].textures_availables[keys[i]].name,
+                            texture : new Buffer(texture).toString('base64')
+                        };
+                    }
+                    //client.emit("addFurniture", selected_sofa);
+                    client.broadcast.emit("addFurniture", selected_tv);
+
+                }else{
+                    client.emit("err", "tv id doesnt exist");
+                }
+                break;
             default:
-                client.emit("err", "sofa id doesnt exist");
+                client.emit("err", "tv id doesnt exist");
                 break;
         }
 
