@@ -45,11 +45,12 @@ var sofas = {
                 name: 'Beige clair',
                 topImg : "./furnitures/sofas/basic_sofa/top_beige.png",
                 texture: "./furnitures/sofas/basic_sofa/toile_beige.jpg",
+            },
             noir : {
                 name: 'Antracite',
                 topImg : "./furnitures/sofas/basic_sofa/top_noir.png",
                 texture: "./furnitures/sofas/basic_sofa/toile_noire.jpg",
-            },
+            }
         },
         size: {
             x: 2,
