@@ -174,7 +174,7 @@ io.on('connection', function (client) {
         }
      */
     client.on("removeFurniture", function(data){
-        client.broadcast.emit(data);
+        client.broadcast.emit(" removeFurniture", data);
     });
 
 
