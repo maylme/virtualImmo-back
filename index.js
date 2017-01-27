@@ -34,7 +34,7 @@ var sofas = {
             x: 2,
             z: 1,
         }
-    },
+    }/*,
     1 : {
         name: "Simple Sofa",
         id: 1,
@@ -51,7 +51,7 @@ var sofas = {
             x: 2,
             z: 1,
         }
-    }
+    }*/
 };
 var tv = {
     0 : {
