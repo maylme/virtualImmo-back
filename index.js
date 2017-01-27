@@ -106,7 +106,7 @@ io.on('connection', function (client) {
                 if (sofas[data.id]){
                     var selected_sofa = {};
                     selected_sofa.id = sofas[data.id].id;
-                    selected_sofa.index = sofas[data.id].index;
+                    selected_sofa.index = data.index;
 
                     selected_sofa.name = sofas[data.id].name;
                     var model3D = fs.readFileSync(sofas[data.id].model3D);
