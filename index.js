@@ -108,8 +108,7 @@ io.on('connection', function (client) {
 
                     var img = fs.readFileSync(tv[keys[i]].miniature);
                     // convert binary data to base64 encoded string
-                    tv.miniature = new Buffer(img).toString('base64');
-
+                    the_tv.miniature = new Buffer(img).toString('base64');
                     var keys_texture = Object.keys(tv[keys[i]].textures_availables);
                     the_tv.textures = {};
                     the_tv.size = tv[keys[i]].size;
