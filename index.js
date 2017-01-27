@@ -34,22 +34,24 @@ var sofas = {
             x: 2,
             z: 1,
         }
-    },
-    1 : {
-        name: "Big Sofa",
-        id: 1,
-        miniature:"./furnitures/sofas/big_sofa/basic_sofa.png",
-        model3D: "./furnitures/sofas/big_sofa/big_sofa_3D.json",
+    }
+};
+var tv = {
+    0 : {
+        name: "Samsung TV",
+        id: 0,
+        miniature:"./furnitures/tv/samsung/samsung_lcd.png",
+        model3D: "./furnitures/tv/samsung/samsung_lcd.json",
         textures_availables: {
             beige : {
                 name: 'Beige clair',
-                topImg : "./furnitures/sofas/big_sofa/top_beige.png",
-                texture: "./furnitures/sofas/big_sofa/toile_beige.jpg",
+                topImg : "./furnitures/tv/samsung/top_tv.png",
+                texture: "./furnitures/tv/samsung/plastic.jpg",
             }
         },
         size: {
-            x: 2,
-            z: 1,
+            x: 1,
+            z: 0.2,
         }
     }
 };
@@ -94,6 +96,34 @@ io.on('connection', function (client) {
                     }
                     available_sofas.push(sofa);
                     client.emit("availableSofas", available_sofas);
+                }
+                break;
+            case "tv":
+                var available_tv = [];
+                var keys = Object.keys(tv);
+                for (var i = 0; i < keys.length; i++){
+                    var the_tv = {};
+                    the_tv.name = tv[keys[i]].name;
+                    the_tv.id = tv[keys[i]].id;
+
+                    var img = fs.readFileSync(tv[keys[i]].miniature);
+                    // convert binary data to base64 encoded string
+                    tv.miniature = new Buffer(img).toString('base64');
+
+                    var keys_texture = Object.keys(tv[keys[i]].textures_availables);
+                    the_tv.textures = {};
+                    the_tv.size = tv[keys[i]].size;
+                    for (var j = 0; j < keys_texture.length; j++){
+
+                        var top = fs.readFileSync(tv[keys[i]].textures_availables[keys_texture[j]].topImg);
+                        tv.textures[keys_texture[j]] = {
+                            name : tv[keys[i]].textures_availables[keys_texture[j]].name,
+                            id: keys_texture[j],
+                            topImg : new Buffer(top).toString('base64')
+                        };
+                    }
+                    available_tv.push(the_tv);
+                    client.emit("availableTv", available_tv);
                 }
                 break;
             default:
