@@ -43,10 +43,15 @@ var tv = {
         miniature:"./furnitures/tv/samsung/samsung_lcd.png",
         model3D: "./furnitures/tv/samsung/samsung_lcd.json",
         textures_availables: {
-            plastic : {
-                name: 'plastic',
-                topImg : "./furnitures/tv/samsung/top_tv.png",
-                texture: "./furnitures/tv/samsung/plastic.jpg",
+            noir : {
+                name: 'noir',
+                topImg : "./furnitures/tv/samsung/top_tv_noir.png",
+                texture: "./furnitures/tv/samsung/plastic_noir.jpg",
+            },
+            blanc : {
+                name: 'blanc',
+                topImg : "./furnitures/tv/samsung/top_tv_blanc.png",
+                texture: "./furnitures/tv/samsung/plastic_blanc.jpg",
             }
         },
         size: {
