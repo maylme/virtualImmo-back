@@ -34,6 +34,28 @@ var sofas = {
             x: 2,
             z: 1,
         }
+    },
+    1 : {
+        name: "Big Sofa",
+        id: 1,
+        miniature:"./furnitures/sofas/big_sofa/basic_sofa.png",
+        model3D: "./furnitures/sofas/big_sofa/big_sofa_3D.json",
+        textures_availables: {
+            beige : {
+                name: 'Beige clair',
+                topImg : "./furnitures/sofas/big_sofa/top_beige.png",
+                texture: "./furnitures/sofas/big_sofa/toile_beige.jpg",
+            },
+            gris: {
+                name: 'Gris clair',
+                topImg : "./furnitures/sofas/big_sofa/top_gris.png",
+                texture: "./furnitures/sofas/big_sofa/toile_grise.jpg",
+            }
+        },
+        size: {
+            x: 2,
+            z: 1,
+        }
     }
 };
 var tv = {
