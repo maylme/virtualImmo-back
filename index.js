@@ -38,8 +38,8 @@ var sofas = {
     1 : {
         name: "Simple Sofa",
         id: 1,
-        miniature:"./furnitures/sofas/simple_sofa/basic_sofa.png",
-        model3D: "./furnitures/sofas/simple_sofa/big_sofa_3D.json",
+        miniature:"./furnitures/sofas/simple_sofa/simple_sofa.png",
+        model3D: "./furnitures/sofas/simple_sofa/simple_sofa_3D.json",
         textures_availables: {
             bordeau : {
                 name: 'bordeau',
