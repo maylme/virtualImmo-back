@@ -43,8 +43,8 @@ var tv = {
         miniature:"./furnitures/tv/samsung/samsung_lcd.png",
         model3D: "./furnitures/tv/samsung/samsung_lcd.json",
         textures_availables: {
-            beige : {
-                name: 'Beige clair',
+            plastic : {
+                name: 'plastic',
                 topImg : "./furnitures/tv/samsung/top_tv.png",
                 texture: "./furnitures/tv/samsung/plastic.jpg",
             }
@@ -116,7 +116,7 @@ io.on('connection', function (client) {
                     for (var j = 0; j < keys_texture.length; j++){
 
                         var top = fs.readFileSync(tv[keys[i]].textures_availables[keys_texture[j]].topImg);
-                        tv.textures[keys_texture[j]] = {
+                        the_tv.textures[keys_texture[j]] = {
                             name : tv[keys[i]].textures_availables[keys_texture[j]].name,
                             id: keys_texture[j],
                             topImg : new Buffer(top).toString('base64')
