@@ -36,20 +36,15 @@ var sofas = {
         }
     },
     1 : {
-        name: "Test Sofa",
+        name: "Simple Sofa",
         id: 1,
-        miniature:"./furnitures/sofas/basic_sofa/basic_sofa.png",
-        model3D: "./furnitures/sofas/basic_sofa/basic_sofa_3D.json",
+        miniature:"./furnitures/sofas/simple_sofa/simple_sofa.png",
+        model3D: "./furnitures/sofas/simple_sofa/simple_sofa_3D.json",
         textures_availables: {
-            beige : {
-                name: 'Beige clair',
-                topImg : "./furnitures/sofas/basic_sofa/top_beige.png",
-                texture: "./furnitures/sofas/basic_sofa/toile_beige.jpg",
-            },
-            noir : {
-                name: 'Antracite',
-                topImg : "./furnitures/sofas/basic_sofa/top_noir.png",
-                texture: "./furnitures/sofas/basic_sofa/toile_noire.jpg",
+            red : {
+                name: 'Bordeau',
+                topImg : "./furnitures/sofas/simple_sofa/top_red.png",
+                texture: "./furnitures/sofas/simple_sofa/red.jpg",
             }
         },
         size: {
