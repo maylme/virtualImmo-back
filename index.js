@@ -14,7 +14,7 @@ app.get('/furnitures/:type/:name/:obj', function (req, res) {
     var url = "./furnitures/"+req.params.type+"/"+req.params.name+"/"+req.params.obj;
     var img = fs.readFileSync(url);
     res.writeHead(200, {'Content-Type': 'text/plain' });
-    res.send(img);
+    res.end(img);
 });
 
 app.listen(3000, function () {
