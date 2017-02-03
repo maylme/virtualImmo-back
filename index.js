@@ -9,9 +9,10 @@ var io = require('socket.io')(server);
 var fs = require('fs');
 
 
-app.get('/objects/:name', function (req, res) {
+app.get('/furnitures/:type/:name/:obj', function (req, res) {
 
-  res.send(req.params.name);
+    var url = "./furnitures/"+req.params.type+"/"+req.params.name+"/"+req.params.obj;
+  res.send(url);
 });
 
 app.listen(3000, function () {
