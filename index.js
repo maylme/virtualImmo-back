@@ -12,7 +12,8 @@ var fs = require('fs');
 app.get('/furnitures/:type/:name/:obj', function (req, res) {
 
     var url = "./furnitures/"+req.params.type+"/"+req.params.name+"/"+req.params.obj;
-  res.send(url);
+    res.writeHead(200, {'Content-Type': 'image/gif' });
+    res.end(img, 'binary');
 });
 
 app.listen(3000, function () {
