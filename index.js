@@ -15,7 +15,7 @@ app.get('/furnitures/:type/:name/:obj', function (req, res) {
     var img = fs.readFileSync(url);
     res.writeHead(200, {
         'Content-Type': 'text/plain' ,
-        'Access-Control-Allow-Origin': 'http://localhost:8080'
+        'Access-Control-Allow-Origin': '*'
     });
     res.end(img);
 });
@@ -171,6 +171,7 @@ io.on('connection', function (client) {
                     selected_sofa.name = sofas[data.id].name;
                     var model3D = sofas[data.id].model3D;
                     selected_sofa.model3D = model3D;
+
                     selected_sofa.selected_texture = data.textureId;
                     selected_sofa.position = data.position;
 
