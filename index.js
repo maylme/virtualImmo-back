@@ -7,24 +7,15 @@ var app = express();
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 var fs = require('fs');
-var http = require("http");
 
 
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
 
-http.createServer(function(req, res){
-    console.log("request smthg", req);
-  var request = url.parse(req.url, true);
-  var action = request.pathname;
-
-  if (action == '/furnitures/sofas/amelie/amelie.obj') {
-     var img = fs.readFileSync('./furnitures/sofas/amelie/amelie.obj');
-     res.writeHead(200, {'Content-Type': 'text/plain' });
-     res.end(img, 'binary');
-  } else { 
-     res.writeHead(200, {'Content-Type': 'text/plain' });
-     res.end('Hello World \n');
-  }
-}).listen(8081, '127.0.0.1');
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+});
 
 
 
@@ -317,11 +308,6 @@ io.on('connection', function (client) {
 
 
 
-});
-
-app.get('/', function (req, res) {
-    return res.status(200)
-        .json({value: "it works !"});
 });
 
 server.listen(8080);
