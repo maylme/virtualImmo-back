@@ -9,8 +9,9 @@ var io = require('socket.io')(server);
 var fs = require('fs');
 
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
+app.get('/objects/:name', function (req, res) {
+
+  res.send(req.params.name);
 });
 
 app.listen(3000, function () {
