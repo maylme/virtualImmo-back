@@ -49,15 +49,15 @@ var sofas = {
         miniature:"./furnitures/view_table/sophie.png",
         model3D: "sophie.obj",
         textures_availables: {
-            taupe : {
-                name: 'Taupe',
+            cuir : {
+                name: 'cuir',
                 topImg : "./furnitures/view_table/sophie_top.png",
                 texture: "sophie_taupe.mtl",
             }
         },
         size: {
             x: 2.3,
-            z: 1,
+            z: 2.3,
         }
     }
 };
