@@ -9,12 +9,31 @@ var io = require('socket.io')(server);
 var fs = require('fs');
 
 
-app.get('/furnitures/:type/:name/:obj', function (req, res) {
+app.get('/object/:obj', function (req, res) {
 
-    var url = "./furnitures/"+req.params.type+"/"+req.params.name+"/"+req.params.obj;
+    var url = "./furnitures/object/"+req.params.obj;
     var img = fs.readFileSync(url);
     res.writeHead(200, {
         'Content-Type': 'text/plain' ,
+        'Access-Control-Allow-Origin': '*'
+    });
+    res.end(img);
+});
+app.get('/mlt/:mlt', function (req, res) {
+
+    var url = "./furnitures/mlt/"+req.params.mlt;
+    var img = fs.readFileSync(url);
+    res.writeHead(200, {
+        'Content-Type': 'text/plain' ,
+        'Access-Control-Allow-Origin': '*'
+    });
+    res.end(img);
+});
+app.get('/:img', function (req, res) {
+
+    var url = "./furnitures/img/"+req.params.img;
+    var img = fs.readFileSync(url);
+    res.writeHead(200, {
         'Access-Control-Allow-Origin': '*'
     });
     res.end(img);
@@ -30,13 +49,13 @@ var sofas = {
     0 : {
         name: "Amelie",
         id: 0,
-        miniature:"./furnitures/sofas/amelie/amelie.png",
-        model3D: "furnitures/sofas/amelie/amelie.obj",
+        miniature:"./furnitures/view_table/amelie.png",
+        model3D: "object/amelie.obj",
         textures_availables: {
             taupe : {
                 name: 'Taupe',
-                topImg : "./furnitures/sofas/amelie/top_taupe.png",
-                texture: "furnitures/sofas/amelie/taupe.mtl",
+                topImg : "./furnitures/view_table/amelie_top_taupe.png",
+                texture: "mlt/taupe.mtl",
             }
         },
         size: {
