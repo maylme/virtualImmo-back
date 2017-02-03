@@ -15,7 +15,7 @@ app.get('/furnitures/:type/:name/:obj', function (req, res) {
     var img = fs.readFileSync(url);
     res.writeHead(200, {
         'Content-Type': 'text/plain' ,
-        'Access-Control-Allow-Origin': 'localhost'
+        'Access-Control-Allow-Origin': 'http://localhost:8080'
     });
     res.end(img);
 });
