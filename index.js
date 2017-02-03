@@ -166,7 +166,7 @@ io.on('connection', function (client) {
                         };
                     }
                     available_table.push(the_table);
-                    client.emit("availabletable", available_table);
+                    client.emit("availableTables", available_table);
                 }
                 break;
             default:
