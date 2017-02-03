@@ -35,7 +35,24 @@ var sofas = {
             taupe : {
                 name: 'Taupe',
                 topImg : "./furnitures/view_table/amelie_top_taupe.png",
-                texture: "taupe.mtl",
+                texture: "amelie_taupe.mtl",
+            }
+        },
+        size: {
+            x: 2.3,
+            z: 1,
+        }
+    },
+    1 : {
+        name: "Sophie",
+        id: 1,
+        miniature:"./furnitures/view_table/sophie.png",
+        model3D: "sophie.obj",
+        textures_availables: {
+            taupe : {
+                name: 'Taupe',
+                topImg : "./furnitures/view_table/sophie_top_taupe.png",
+                texture: "sophie_taupe.mtl",
             }
         },
         size: {
