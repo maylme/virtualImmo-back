@@ -170,7 +170,7 @@ io.on('connection', function (client) {
 
                     selected_sofa.name = sofas[data.id].name;
                     var model3D = sofas[data.id].model3D;
-
+                    selected_sofa.model3D = model3D;
                     selected_sofa.selected_texture = data.textureId;
                     selected_sofa.position = data.position;
 
