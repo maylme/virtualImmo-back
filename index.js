@@ -28,63 +28,19 @@ app.listen(3000, function () {
 
 var sofas = {
     0 : {
-        name: "Basic Sofa",
-        id: 0,
-        miniature:"./furnitures/sofas/basic_sofa/basic_sofa.png",
-        model3D: "./furnitures/sofas/basic_sofa/basic_sofa_3D.json",
-        textures_availables: {
-            beige : {
-                name: 'Beige clair',
-                topImg : "./furnitures/sofas/basic_sofa/top_beige.png",
-                texture: "./furnitures/sofas/basic_sofa/toile_beige.jpg",
-            },
-            gris: {
-                name: 'Gris clair',
-                topImg : "./furnitures/sofas/basic_sofa/top_gris.png",
-                texture: "./furnitures/sofas/basic_sofa/toile_grise.jpg",
-            },
-            noir : {
-                name: 'Antracite',
-                topImg : "./furnitures/sofas/basic_sofa/top_noir.png",
-                texture: "./furnitures/sofas/basic_sofa/toile_noire.jpg",
-            },
-        },
-        size: {
-            x: 2,
-            z: 1,
-        }
-    },
-    1 : {
-        name: "Simple Sofa",
-        id: 1,
-        miniature:"./furnitures/sofas/simple_sofa/simple_sofa.png",
-        model3D: "./furnitures/sofas/simple_sofa/simple_sofa_3D.json",
-        textures_availables: {
-            red : {
-                name: 'Bordeau',
-                topImg : "./furnitures/sofas/simple_sofa/top_red.png",
-                texture: "./furnitures/sofas/simple_sofa/red.jpg",
-            }
-        },
-        size: {
-            x: 2,
-            z: 1,
-        }
-    },
-    2 : {
         name: "Amelie",
-        id: 2,
+        id: 0,
         miniature:"./furnitures/sofas/amelie/amelie.png",
-        model3D: "./furnitures/sofas/amelie/amelie_3D.obj",
+        model3D: "furnitures/sofas/amelie/amelie.obj",
         textures_availables: {
             taupe : {
                 name: 'Taupe',
                 topImg : "./furnitures/sofas/amelie/top_taupe.png",
-                texture: "./furnitures/sofas/amelie/taupe.mtl",
+                texture: "furnitures/sofas/amelie/taupe.mtl",
             }
         },
         size: {
-            x: 2,
+            x: 2.3,
             z: 1,
         }
     }
@@ -213,8 +169,7 @@ io.on('connection', function (client) {
                     selected_sofa.index = data.index;
 
                     selected_sofa.name = sofas[data.id].name;
-                    var model3D = fs.readFileSync(sofas[data.id].model3D);
-                    selected_sofa.model3D = JSON.parse(new Buffer(model3D).toString());
+                    var model3D = sofas[data.id].model3D;
 
                     selected_sofa.selected_texture = data.textureId;
                     selected_sofa.position = data.position;
@@ -224,10 +179,9 @@ io.on('connection', function (client) {
                     var keys = Object.keys(sofas[data.id].textures_availables);
 
                     for (var i = 0; i < keys.length; i++){
-                        var texture = fs.readFileSync(sofas[data.id].textures_availables[keys[i]].texture);
                         selected_sofa.textures_availables[keys[i]] = {
                             name: sofas[data.id].textures_availables[keys[i]].name,
-                            texture : new Buffer(texture).toString('base64')
+                            texture : sofas[data.id].textures_availables[keys[i]].texture
                         };
                     }
                     //client.emit("addFurniture", selected_sofa);
