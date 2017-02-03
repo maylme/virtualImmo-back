@@ -59,32 +59,46 @@ var sofas = {
             x: 2.5,
             z: 2,
         }
+    },
+    2 : {
+        name: "Bobo",
+        id: 2,
+        miniature:"./furnitures/view_table/bobo.png",
+        model3D: "bobo.obj",
+        textures_availables: {
+            tissus : {
+                name: 'tissus',
+                topImg : "./furnitures/view_table/bobo_top.png",
+                texture: "bobo.mtl",
+            }
+        },
+        size: {
+            x: 2.5,
+            z: 2,
+        }
     }
 };
-var tv = {
+
+var table = {
     0 : {
-        name: "Samsung TV",
+        name: "Mesa",
         id: 0,
-        miniature:"./furnitures/tv/samsung/samsung_lcd.png",
-        model3D: "./furnitures/tv/samsung/samsung_lcd.json",
+        miniature:"./furnitures/view_table/mesa.png",
+        model3D: "mesa.obj",
         textures_availables: {
-            noir : {
-                name: 'noir',
-                topImg : "./furnitures/tv/samsung/top_tv_noir.png",
-                texture: "./furnitures/tv/samsung/plastic_noir.jpg",
-            },
-            blanc : {
-                name: 'blanc',
-                topImg : "./furnitures/tv/samsung/top_tv_blanc.png",
-                texture: "./furnitures/tv/samsung/plastic_blanc.jpg",
+            normal : {
+                name: 'normal',
+                topImg : "./furnitures/view_table/mesa_top.png",
+                texture: "mesa.mtl",
             }
         },
         size: {
             x: 1,
-            z: 0.2,
+            z: 1,
         }
     }
 };
+
 
 io.on('connection', function (client) {
     console.log("client connected");
@@ -128,31 +142,31 @@ io.on('connection', function (client) {
                     client.emit("availableSofas", available_sofas);
                 }
                 break;
-            case "tv":
-                var available_tv = [];
-                var keys = Object.keys(tv);
+            case "table":
+                var available_table = [];
+                var keys = Object.keys(table);
                 for (var i = 0; i < keys.length; i++){
-                    var the_tv = {};
-                    the_tv.name = tv[keys[i]].name;
-                    the_tv.id = tv[keys[i]].id;
+                    var the_table = {};
+                    the_table.name = table[keys[i]].name;
+                    the_table.id = table[keys[i]].id;
 
-                    var img = fs.readFileSync(tv[keys[i]].miniature);
+                    var img = fs.readFileSync(table[keys[i]].miniature);
                     // convert binary data to base64 encoded string
-                    the_tv.miniature = new Buffer(img).toString('base64');
-                    var keys_texture = Object.keys(tv[keys[i]].textures_availables);
-                    the_tv.textures = {};
-                    the_tv.size = tv[keys[i]].size;
+                    the_table.miniature = new Buffer(img).toString('base64');
+                    var keys_texture = Object.keys(table[keys[i]].textures_availables);
+                    the_table.textures = {};
+                    the_table.size = table[keys[i]].size;
                     for (var j = 0; j < keys_texture.length; j++){
 
-                        var top = fs.readFileSync(tv[keys[i]].textures_availables[keys_texture[j]].topImg);
-                        the_tv.textures[keys_texture[j]] = {
-                            name : tv[keys[i]].textures_availables[keys_texture[j]].name,
+                        var top = fs.readFileSync(table[keys[i]].textures_availables[keys_texture[j]].topImg);
+                        the_table.textures[keys_texture[j]] = {
+                            name : table[keys[i]].textures_availables[keys_texture[j]].name,
                             id: keys_texture[j],
                             topImg : new Buffer(top).toString('base64')
                         };
                     }
-                    available_tv.push(the_tv);
-                    client.emit("availableTv", available_tv);
+                    available_table.push(the_table);
+                    client.emit("availabletable", available_table);
                 }
                 break;
             default:
@@ -208,39 +222,39 @@ io.on('connection', function (client) {
                     client.emit("err", "sofa id doesnt exist");
                 }
                 break;
-            case "tv":
-                if (tv[data.id]){
-                    var selected_tv = {};
-                    selected_tv.id = tv[data.id].id;
-                    selected_tv.index = data.index;
+            case "table":
+                if (table[data.id]){
+                    var selected_table = {};
+                    selected_table.id = table[data.id].id;
+                    selected_table.index = data.index;
 
-                    selected_tv.name = tv[data.id].name;
-                    var model3D = fs.readFileSync(tv[data.id].model3D);
-                    selected_tv.model3D = JSON.parse(new Buffer(model3D).toString());
+                    selected_table.name = table[data.id].name;
+                    var model3D = table[data.id].model3D;
+                    selected_table.model3D = model3D;
 
-                    selected_tv.selected_texture = data.textureId;
-                    selected_tv.position = data.position;
+                    selected_table.selected_texture = data.textureId;
+                    selected_table.position = data.position;
 
-                    selected_tv.textures_availables = {};
-                    selected_tv.type = "tv";
-                    var keys = Object.keys(tv[data.id].textures_availables);
+                    selected_table.textures_availables = {};
+                    selected_table.type = "table";
+                    var keys = Object.keys(table[data.id].textures_availables);
 
                     for (var i = 0; i < keys.length; i++){
-                        var texture = fs.readFileSync(tv[data.id].textures_availables[keys[i]].texture);
-                        selected_tv.textures_availables[keys[i]] = {
-                            name: tv[data.id].textures_availables[keys[i]].name,
-                            texture : new Buffer(texture).toString('base64')
+                        var texture = table[data.id].textures_availables[keys[i]].texture;
+                        selected_table.textures_availables[keys[i]] = {
+                            name: table[data.id].textures_availables[keys[i]].name,
+                            texture : texture
                         };
                     }
                     //client.emit("addFurniture", selected_sofa);
-                    client.broadcast.emit("addFurniture", selected_tv);
+                    client.broadcast.emit("addFurniture", selected_table);
 
                 }else{
-                    client.emit("err", "tv id doesnt exist");
+                    client.emit("err", "table id doesnt exist");
                 }
                 break;
             default:
-                client.emit("err", "tv id doesnt exist");
+                client.emit("err", "table id doesnt exist");
                 break;
         }
 
