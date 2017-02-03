@@ -12,6 +12,7 @@ var http = require("http");
 
 
 http.createServer(function(req, res){
+    console.log("request smthg", req);
   var request = url.parse(req.url, true);
   var action = request.pathname;
 
