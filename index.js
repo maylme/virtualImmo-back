@@ -39,8 +39,8 @@ var sofas = {
             }
         },
         size: {
-            x: 2.3,
-            z: 1,
+            x: 3.75,
+            z: 1.75,
         }
     },
     1 : {
@@ -70,8 +70,14 @@ var sofas = {
                 name: 'tissus',
                 topImg : "./furnitures/view_table/bobo_top.png",
                 texture: "bobo.mtl",
+            },
+            rose : {
+                name: 'rose',
+                topImg : "./furnitures/view_table/bobo_rose_top.png",
+                texture: "bobo_rose.mtl",
             }
         },
+
         size: {
             x: 1.7,
             z: 1,
