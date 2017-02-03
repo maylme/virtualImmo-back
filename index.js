@@ -51,24 +51,24 @@ var sofas = {
             x: 2,
             z: 1,
         }
-    }/*,
-    1 : {
-        name: "Simple Sofa",
-        id: 1,
-        miniature:"./furnitures/sofas/simple_sofa/simple_sofa.png",
-        model3D: "./furnitures/sofas/simple_sofa/simple_sofa_3D.json",
+    },
+    2 : {
+        name: "Amelie",
+        id: 2,
+        miniature:"./furnitures/sofas/amelie/amelie.png",
+        model3D: "./furnitures/sofas/amelie/amelie_3D.obj",
         textures_availables: {
-            bordeau : {
-                name: 'bordeau',
-                topImg : "./furnitures/sofas/simple_sofa/top_red.png",
-                texture: "./furnitures/sofas/simple_sofa/red.jpg",
+            taupe : {
+                name: 'Taupe',
+                topImg : "./furnitures/sofas/amelie/top_taupe.png",
+                texture: "./furnitures/sofas/amelie/taupe.mtl",
             }
         },
         size: {
             x: 2,
             z: 1,
         }
-    }*/
+    }
 };
 var tv = {
     0 : {
