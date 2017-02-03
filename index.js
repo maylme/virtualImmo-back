@@ -52,7 +52,7 @@ var sofas = {
             cuir : {
                 name: 'cuir',
                 topImg : "./furnitures/view_table/sophie_top.png",
-                texture: "sophie_taupe.mtl",
+                texture: "sophie_cuir.mtl",
             }
         },
         size: {
