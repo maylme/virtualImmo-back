@@ -51,7 +51,7 @@ var sofas = {
         textures_availables: {
             taupe : {
                 name: 'Taupe',
-                topImg : "./furnitures/view_table/sophie_top_taupe.png",
+                topImg : "./furnitures/view_table/sophie_top.png",
                 texture: "sophie_taupe.mtl",
             }
         },
