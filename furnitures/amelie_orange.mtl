@@ -74,6 +74,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
+map_Kd amelie_cousin_orange.jpg
 
 newmtl cosins_brown.001
 Ns 94.117647
@@ -84,3 +85,4 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
+map_Kd amelie_cousin_orange.jpg

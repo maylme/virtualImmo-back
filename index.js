@@ -32,15 +32,20 @@ var sofas = {
         miniature:"./furnitures/view_table/amelie.png",
         model3D: "amelie.obj",
         textures_availables: {
-            taupe : {
-                name: 'Taupe',
+            rose : {
+                name: 'Coussins Roses',
                 topImg : "./furnitures/view_table/amelie_top_taupe.png",
-                texture: "amelie.mtl",
+                texture: "amelie_rose.mtl",
+            },
+            orange : {
+                name: 'Coussins Oranges',
+                topImg : "./furnitures/view_table/amelie_top_taupe.png",
+                texture: "amelie_orange.mtl",
             }
         },
         size: {
-            x: 5.26,
-            z: 1.75,
+            x: 5,
+            z: 1.68,
         }
     },
     1 : {
