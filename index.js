@@ -133,12 +133,12 @@ var table = {
     2 : {
         name: "Table en marbre",
         id: 2,
-        miniature:"./furnitures/view_table/cafe_table.png",
+        miniature:"./furnitures/view_table/marble_table.png",
         model3D: "marble_table.obj",
         textures_availables: {
             normal : {
                 name: 'normal',
-                topImg : "./furnitures/view_table/cafe_table_top.png",
+                topImg : "./furnitures/view_table/marble_table_top.png",
                 texture: "marble_table.mtl",
             }
         },
