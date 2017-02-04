@@ -75,6 +75,11 @@ var sofas = {
                 name: 'rose',
                 topImg : "./furnitures/view_table/bobo_rose_top.png",
                 texture: "bobo_rose.mtl",
+            },
+            bleu : {
+                name: 'bleu',
+                topImg : "./furnitures/view_table/bobo_bleu_top.png",
+                texture: "bobo_bleu.mtl",
             }
         },
 
