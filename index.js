@@ -112,6 +112,23 @@ var table = {
             x: 2.7,
             z: 1.44,
         }
+    },
+    1 : {
+        name: "Table de café",
+        id: 1,
+        miniature:"./furnitures/view_table/mesa.png",
+        model3D: "cafe_table.obj",
+        textures_availables: {
+            normal : {
+                name: 'normal',
+                topImg : "./furnitures/view_table/mesa_top.png",
+                texture: "cafe_table.mtl",
+            }
+        },
+        size: {
+            x: 2.7,
+            z: 1.44,
+        }
     }
 };
 
