@@ -1,18 +1,18 @@
 # Blender MTL File: 'None'
 # Material Count: 2
 
-newmtl Legs
-Ns 125.490196
+newmtl Legs.001
+Ns 123.529412
 Ka 0.200000 0.200000 0.200000
 Kd 0.850000 0.650000 0.120000
 Ks 1.000000 1.000000 1.000000
 Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
-illum 3
+illum 0
 map_Kd gold.jpg
 
-newmtl Top
+newmtl Top.001
 Ns 29.411765
 Ka 0.200000 0.200000 0.200000
 Kd 0.800000 0.800000 0.800000
@@ -20,5 +20,5 @@ Ks 1.000000 1.000000 1.000000
 Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
-illum 2
+illum 0
 map_Kd marble.jpg
