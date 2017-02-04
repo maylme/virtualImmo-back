@@ -35,7 +35,7 @@ var sofas = {
             taupe : {
                 name: 'Taupe',
                 topImg : "./furnitures/view_table/amelie_top_taupe.png",
-                texture: "amelie_taupe.mtl",
+                texture: "amelie.mtl",
             }
         },
         size: {
