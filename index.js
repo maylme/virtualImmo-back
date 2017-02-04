@@ -116,13 +116,30 @@ var table = {
     1 : {
         name: "Table de café",
         id: 1,
-        miniature:"./furnitures/view_table/mesa.png",
+        miniature:"./furnitures/view_table/cafe_table.png",
         model3D: "cafe_table.obj",
         textures_availables: {
             normal : {
                 name: 'normal',
-                topImg : "./furnitures/view_table/mesa_top.png",
+                topImg : "./furnitures/view_table/cafe_table_top.png",
                 texture: "cafe_table.mtl",
+            }
+        },
+        size: {
+            x: 2,
+            z: 1.52,
+        }
+    },
+    2 : {
+        name: "Table en marbre",
+        id: 2,
+        miniature:"./furnitures/view_table/cafe_table.png",
+        model3D: "marble_table.obj",
+        textures_availables: {
+            normal : {
+                name: 'normal',
+                topImg : "./furnitures/view_table/cafe_table_top.png",
+                texture: "marble_table.mtl",
             }
         },
         size: {
