@@ -20,7 +20,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd amelie_base.jpg
+map_Kd fabric_three_seat_sofa_base.jpg
 
 newmtl beige-fabric-borders
 Ns 0.000000
@@ -31,7 +31,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd amelie_seat.jpg
+map_Kd fabric_three_seat_sofa.jpg
 
 newmtl beige-fabric-borders_fabric_three_seat_sofa_base.jpg
 Ns 0.000000
@@ -42,7 +42,7 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd amelie_base.jpg
+map_Kd fabric_three_seat_sofa_base.jpg
 
 newmtl blue-mate-steel
 Ns 0.000000
