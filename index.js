@@ -34,12 +34,12 @@ var sofas = {
         textures_availables: {
             rose : {
                 name: 'Coussins Roses',
-                topImg : "./furnitures/view_table/amelie_top_taupe.png",
+                topImg : "./furnitures/view_table/amelie_top_rose.png",
                 texture: "amelie_rose.mtl",
             },
             orange : {
                 name: 'Coussins Oranges',
-                topImg : "./furnitures/view_table/amelie_top_taupe.png",
+                topImg : "./furnitures/view_table/amelie_top_orange.png",
                 texture: "amelie_orange.mtl",
             }
         },
