@@ -223,8 +223,8 @@ io.on('connection', function (client) {
                         };
                     }
                     available_sofas.push(sofa);
-                    client.emit("availableSofas", available_sofas);
                 }
+                client.emit("availableSofas", available_sofas);
                 break;
             case "table":
                 var available_table = [];
@@ -250,8 +250,8 @@ io.on('connection', function (client) {
                         };
                     }
                     available_table.push(the_table);
-                    client.emit("availableTables", available_table);
                 }
+                client.emit("availableTables", available_table);
                 break;
             default:
                 client.emit("err", "furniture not found");
