@@ -146,6 +146,23 @@ var table = {
             x: 2.94,
             z: 2.94,
         }
+    },
+    3 : {
+        name: "Table basse vitrée bois et acier",
+        id: 3,
+        miniature:"./furnitures/view_table/marble_table.png",
+        model3D: "table_wood_and_iron.obj",
+        textures_availables: {
+            normal : {
+                name: 'normal',
+                topImg : "./furnitures/view_table/marble_table_top.png",
+                texture: "table_wood_and_iron.mtl",
+            }
+        },
+        size: {
+            x: 2.94,
+            z: 2.94,
+        }
     }
 };
 
