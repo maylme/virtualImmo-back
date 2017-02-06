@@ -150,13 +150,30 @@ var table = {
     3 : {
         name: "Table basse vitrée bois et acier",
         id: 3,
-        miniature:"./furnitures/view_table/marble_table.png",
+        miniature:"./furnitures/view_table/table_wood_and_iron.png",
         model3D: "table_wood_and_iron.obj",
         textures_availables: {
             normal : {
                 name: 'normal',
-                topImg : "./furnitures/view_table/marble_table_top.png",
+                topImg : "./furnitures/view_table/table_wood_and_iron_top.png",
                 texture: "table_wood_and_iron.mtl",
+            }
+        },
+        size: {
+            x: 1.96,
+            z: 1.22,
+        }
+    },
+    4 : {
+        name: "Table basse carrée",
+        id: 4,
+        miniature:"./furnitures/view_table/marble_table.png",
+        model3D: "tableBasseCarre.obj",
+        textures_availables: {
+            normal : {
+                name: 'normal',
+                topImg : "./furnitures/view_table/marble_table_top.png",
+                texture: "tableBasseCarre.mtl",
             }
         },
         size: {
