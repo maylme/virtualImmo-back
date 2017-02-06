@@ -381,6 +381,10 @@ io.on('connection', function (client) {
         client.broadcast.emit("removeFurniture", data);
     });
 
+    client.on("position", function(data){
+        client.broadcast.emit("position", data);
+    });
+
 
 
 
