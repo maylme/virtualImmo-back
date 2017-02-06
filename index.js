@@ -183,6 +183,25 @@ var table = {
     }
 };
 
+var beds = {
+    0 : {
+        name: "leti",
+        id: 0,
+        miniature:"./furnitures/view_table/mesa.png",
+        model3D: "children_bed.obj",
+        textures_availables: {
+            normal : {
+                name: 'normal',
+                topImg : "./furnitures/view_table/mesa_top.png",
+                texture: "children_bed.mtl",
+            }
+        },
+        size: {
+            x: 2.7,
+            z: 1.44,
+        }
+    }
+};
 
 io.on('connection', function (client) {
     console.log("client connected");
@@ -225,6 +244,34 @@ io.on('connection', function (client) {
                     available_sofas.push(sofa);
                 }
                 client.emit("availableSofas", available_sofas);
+                break;
+            case "bed":
+                var available_beds = [];
+                var keys = Object.keys(beds);
+                for (var i = 0; i < keys.length; i++){
+                    var bed = {};
+                    bed.name = beds[keys[i]].name;
+                    bed.id = beds[keys[i]].id;
+
+                    var img = fs.readFileSync(beds[keys[i]].miniature);
+                    // convert binary data to base64 encoded string
+                    bed.miniature = new Buffer(img).toString('base64');
+
+                    var keys_texture = Object.keys(beds[keys[i]].textures_availables);
+                    bed.textures = {};
+                    bed.size = beds[keys[i]].size;
+                    for (var j = 0; j < keys_texture.length; j++){
+
+                        var top = fs.readFileSync(beds[keys[i]].textures_availables[keys_texture[j]].topImg);
+                        bed.textures[keys_texture[j]] = {
+                            name : beds[keys[i]].textures_availables[keys_texture[j]].name,
+                            id: keys_texture[j],
+                            topImg : new Buffer(top).toString('base64')
+                        };
+                    }
+                    available_beds.push(bed);
+                }
+                client.emit("availableBeds", available_beds);
                 break;
             case "table":
                 var available_table = [];
@@ -275,73 +322,52 @@ io.on('connection', function (client) {
      */
     client.on("tableAddFurniture", function(data){
         console.log(data);
+        var type = null;
         switch (data.type){
             case "sofa":
-                if (sofas[data.id]){
-                    var selected_sofa = {};
-                    selected_sofa.id = sofas[data.id].id;
-                    selected_sofa.index = data.index;
-
-                    selected_sofa.name = sofas[data.id].name;
-                    var model3D = sofas[data.id].model3D;
-                    selected_sofa.model3D = model3D;
-
-                    selected_sofa.selected_texture = data.textureId;
-                    selected_sofa.position = data.position;
-
-                    selected_sofa.textures_availables = {};
-                    selected_sofa.type = "sofa";
-                    var keys = Object.keys(sofas[data.id].textures_availables);
-
-                    for (var i = 0; i < keys.length; i++){
-                        selected_sofa.textures_availables[keys[i]] = {
-                            name: sofas[data.id].textures_availables[keys[i]].name,
-                            texture : sofas[data.id].textures_availables[keys[i]].texture
-                        };
-                    }
-                    //client.emit("addFurniture", selected_sofa);
-                    client.broadcast.emit("addFurniture", selected_sofa);
-
-                }else{
-                    client.emit("err", "sofa id doesnt exist");
-                }
+                if (sofas[data.id])
+                    type = sofas;
                 break;
             case "table":
                 if (table[data.id]){
-                    var selected_table = {};
-                    selected_table.id = table[data.id].id;
-                    selected_table.index = data.index;
-
-                    selected_table.name = table[data.id].name;
-                    var model3D = table[data.id].model3D;
-                    selected_table.model3D = model3D;
-
-                    selected_table.selected_texture = data.textureId;
-                    selected_table.position = data.position;
-
-                    selected_table.textures_availables = {};
-                    selected_table.type = "table";
-                    var keys = Object.keys(table[data.id].textures_availables);
-
-                    for (var i = 0; i < keys.length; i++){
-                        var texture = table[data.id].textures_availables[keys[i]].texture;
-                        selected_table.textures_availables[keys[i]] = {
-                            name: table[data.id].textures_availables[keys[i]].name,
-                            texture : texture
-                        };
-                    }
-                    //client.emit("addFurniture", selected_sofa);
-                    client.broadcast.emit("addFurniture", selected_table);
-
-                }else{
-                    client.emit("err", "table id doesnt exist");
+                   type = table;
                 }
                 break;
+            case "bed":
+                if (bed[data.id]){
+                    type = bed;
+                }
             default:
-                client.emit("err", "table id doesnt exist");
                 break;
         }
+        if (type!==null){
+            var selected = {};
+            selected.id = type[data.id].id;
+            selected.index = data.index;
 
+            selected.name = type[data.id].name;
+            var model3D = type[data.id].model3D;
+            selected.model3D = model3D;
+
+            selected.selected_texture = data.textureId;
+            selected.position = data.position;
+
+            selected.textures_availables = {};
+            selected.type = data.type;
+            var keys = Object.keys(type[data.id].textures_availables);
+
+            for (var i = 0; i < keys.length; i++){
+                selected.textures_availables[keys[i]] = {
+                    name: type[data.id].textures_availables[keys[i]].name,
+                    texture : type[data.id].textures_availables[keys[i]].texture
+                };
+            }
+            client.broadcast.emit("addFurniture", selected);
+
+        }
+        else{
+            client.emit("err", "furniture not found");
+        }
     });
     /*
         data = {
