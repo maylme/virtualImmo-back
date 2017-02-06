@@ -167,12 +167,12 @@ var table = {
     4 : {
         name: "Table basse carrée",
         id: 4,
-        miniature:"./furnitures/view_table/marble_table.png",
+        miniature:"./furnitures/view_table/tableBasseCarree.png",
         model3D: "tableBasseCarree.obj",
         textures_availables: {
             normal : {
                 name: 'normal',
-                topImg : "./furnitures/view_table/marble_table_top.png",
+                topImg : "./furnitures/view_table/tableBasseCarree_top.png",
                 texture: "tableBasseCarree.mtl",
             }
         },
