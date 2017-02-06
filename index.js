@@ -205,6 +205,23 @@ var beds = {
             x: 2.7,
             z: 1.44,
         }
+    },
+    1 : {
+        name: "Letto",
+        id: 1,
+        miniature:"./furnitures/view_table/mesa.png",
+        model3D: "letto.obj",
+        textures_availables: {
+            normal : {
+                name: 'normal',
+                topImg : "./furnitures/view_table/mesa_top.png",
+                texture: "letto.mtl",
+            }
+        },
+        size: {
+            x: 2.7,
+            z: 1.44,
+        }
     }
 };
 
