@@ -335,7 +335,7 @@ io.on('connection', function (client) {
                 break;
             case "bed":
                 if (bed[data.id]){
-                    type = bed;
+                    type = beds;
                 }
             default:
                 break;
