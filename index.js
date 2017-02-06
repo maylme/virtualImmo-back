@@ -193,7 +193,7 @@ var beds = {
             boy : {
                 name: 'boy',
                 topImg : "./furnitures/view_table/mesa_top.png",
-                texture: "boy.mtl",
+                texture: "children_bed_boy.mtl",
             }
         },
         size: {
