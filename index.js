@@ -43,7 +43,7 @@ var sofas = {
                 texture: "amelie_orange.mtl",
             }
         },
-        size: {
+        size: { /* size ok */
             x: 5,
             z: 1.68,
         }
@@ -187,23 +187,23 @@ var beds = {
     0 : {
         name: "lit enfant",
         id: 0,
-        miniature:"./furnitures/view_table/mesa.png",
+        miniature:"./furnitures/view_table/children_bed.png",
         model3D: "children_bed.obj",
         textures_availables: {
             boy : {
                 name: 'boy',
-                topImg : "./furnitures/view_table/mesa_top.png",
+                topImg : "./furnitures/view_table/children_bed_boy.png",
                 texture: "children_bed_boy.mtl",
             },
             girl : {
                 name: 'girl',
-                topImg : "./furnitures/view_table/mesa_top.png",
+                topImg : "./furnitures/view_table/children_bed_girl.png",
                 texture: "children_bed_girl.mtl",
             }
         },
-        size: {
-            x: 3.86,
-            z: 1.3,
+        size: { /* size ok */
+            x: 3.52,
+            z: 1.58,
         }
     },
     1 : {
