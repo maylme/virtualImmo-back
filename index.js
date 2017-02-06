@@ -185,13 +185,13 @@ var table = {
 
 var beds = {
     0 : {
-        name: "leti",
+        name: "lit enfant",
         id: 0,
         miniature:"./furnitures/view_table/mesa.png",
         model3D: "children_bed.obj",
         textures_availables: {
-            normal : {
-                name: 'normal',
+            boy : {
+                name: 'boy',
                 topImg : "./furnitures/view_table/mesa_top.png",
                 texture: "children_bed.mtl",
             }
