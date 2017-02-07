@@ -176,9 +176,9 @@ var table = {
                 texture: "tableBasseCarree.mtl",
             }
         },
-        size: {
-            x: 1.8,
-            z: 1.62,
+        size: { /* size ok */
+            x: 1.48,
+            z: 1.54,
         }
     }
 };
