@@ -222,7 +222,25 @@ var beds = {
             x: 2.7,
             z: 1.44,
         }
+    },
+    2 : {
+        name: "Lit de Luxe",
+        id: 2,
+        miniature:"./furnitures/view_table/mesa.png",
+        model3D: "bed_luxe.obj",
+        textures_availables: {
+            normal : {
+                name: 'normal',
+                topImg : "./furnitures/view_table/mesa_top.png",
+                texture: "bed_luxe.mtl",
+            }
+        },
+        size: {
+            x: 2.7,
+            z: 1.44,
+        }
     }
+
 };
 
 io.on('connection', function (client) {
