@@ -254,9 +254,30 @@ io.on('connection', function (client) {
         console.log(data);
         client.broadcast.emit("inputChange", data);
     });
+
     client.on("wallTable", function (data) {
         console.log("wall:", data);
         client.broadcast.emit("wallVR", data);
+    });
+
+    client.on("tableWantTypes", function (data) {
+        var res = [
+
+            {
+                type : "bed",
+                menu_name: "Lits"
+            },
+            {
+                type : "sofa",
+                menu_name: "Canapés"
+            },
+            {
+                type : "table",
+                menu_name: "Tables et tables basses"
+            },
+
+        ];
+        client.broadcast.emit("availableTypes", res);
     });
     client.on("tableWantFurniture", function(furniture_type){
         console.log("furniture_type");
