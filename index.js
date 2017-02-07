@@ -456,7 +456,7 @@ io.on('connection', function (client) {
         data = {
             id : "furniture id",
             type: "furniture type",
-            texture_id: "texture_id",
+            textureId: "texture_id",
             index: "furniture_id_in_display"
         }
      */
