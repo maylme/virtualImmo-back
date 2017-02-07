@@ -60,7 +60,7 @@ var sofas = {
                 texture: "sophie_cuir.mtl",
             }
         },
-        size: {
+        size: { /* canape de merde */
             x: 6.68,
             z: 5.12,
         }
@@ -88,7 +88,7 @@ var sofas = {
             }
         },
 
-        size: {
+        size: { /* size ok */
             x: 4.04,
             z: 2.12,
         }
@@ -108,7 +108,7 @@ var table = {
                 texture: "mesa.mtl",
             }
         },
-        size: {
+        size: { /* size ok */
             x: 2.7,
             z: 1.44,
         }
@@ -125,7 +125,7 @@ var table = {
                 texture: "cafe_table.mtl",
             }
         },
-        size: {
+        size: { /* size ok */
             x: 1.5,
             z: 1.2,
         }
@@ -142,7 +142,7 @@ var table = {
                 texture: "marble_table.mtl",
             }
         },
-        size: {
+        size: { /* size ok */
             x: 2.6,
             z: 2.6,
         }
@@ -159,7 +159,7 @@ var table = {
                 texture: "table_wood_and_iron.mtl",
             }
         },
-        size: {
+        size: { /* size ok */
             x: 1.96,
             z: 1.22,
         }
@@ -201,7 +201,7 @@ var beds = {
                 texture: "children_bed_girl.mtl",
             }
         },
-        size: { /* size ok */
+        size: { /* size ok */zzs
             x: 3.52,
             z: 1.58,
         }
