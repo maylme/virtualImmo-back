@@ -209,38 +209,42 @@ var beds = {
     1 : {
         name: "Letto",
         id: 1,
-        miniature:"./furnitures/view_table/mesa.png",
+        miniature:"./furnitures/view_table/letto.png",
         model3D: "letto.obj",
         textures_availables: {
             normal : {
                 name: 'normal',
-                topImg : "./furnitures/view_table/mesa_top.png",
+                topImg : "./furnitures/view_table/letto_top.png",
                 texture: "letto.mtl",
             }
         },
-        size: {
-            x: 2.7,
-            z: 1.44,
+        size: { /* size ok */
+            x: 4.3,
+            z: 4.64,
         }
     },
     2 : {
         name: "Lit de Luxe",
         id: 2,
-        miniature:"./furnitures/view_table/mesa.png",
+        miniature:"./furnitures/view_table/bed_luxe.png",
         model3D: "bed_luxe.obj",
         textures_availables: {
             normal : {
                 name: 'normal',
-                topImg : "./furnitures/view_table/mesa_top.png",
-                texture: "bed_luxe.mtl",
+                topImg : "./furnitures/view_table/bed_luxe_white.png",
+                texture: "bed_luxe_white.mtl",
+            },
+            red : {
+                name: 'red',
+                topImg : "./furnitures/view_table/bed_luxe_red.png",
+                texture: "bed_luxe_red.mtl",
             }
         },
-        size: {
-            x: 2.7,
-            z: 1.44,
+        size: { /* size ok */
+            x: 3.6,
+            z: 4.3,
         }
     }
-
 };
 
 io.on('connection', function (client) {
