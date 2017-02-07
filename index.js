@@ -277,7 +277,7 @@ io.on('connection', function (client) {
             },
 
         ];
-        client.broadcast.emit("availableTypes", res);
+        client.emit("availableTypes", res);
     });
     client.on("tableWantFurniture", function(furniture_type){
         console.log("furniture_type");
