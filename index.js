@@ -201,7 +201,7 @@ var beds = {
                 texture: "children_bed_girl.mtl",
             }
         },
-        size: { /* size ok */zzs
+        size: { /* size ok */
             x: 3.52,
             z: 1.58,
         }
